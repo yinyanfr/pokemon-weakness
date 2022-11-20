@@ -9,7 +9,8 @@ export default {
     title: false,
     useLocalStorage: true,
   },
-  favicons: ["/assets/favicon.ico"],
+  title: "Pokemon Weakness",
+  favicons: ["favicon.ico"],
   metas: [
     { name: "apple-mobile-web-app-capable", content: "yes" },
     {
@@ -18,5 +19,15 @@ export default {
     },
     { name: "apple-mobile-web-app-title", content: "Pokemon Weakness" },
     { name: "apple-mobile-web-app-orientations", content: "portrait-any" },
+  ],
+  links: [
+    {
+      rel: "manifest",
+      href: "manifest.json",
+    },
+  ],
+  copy: [
+    { from: "src/assets/favicon.ico", to: "dist" },
+    { from: "src/assets/manifest.json", to: "dist" },
   ],
 };
