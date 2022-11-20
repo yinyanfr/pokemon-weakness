@@ -1,7 +1,8 @@
 {
-  "private": true,
+  "private": false,
   "author": "Yan <i@yinyan.fr>",
   "scripts": {
+    "umi": "umi",
     "dev": "umi dev",
     "build": "umi build",
     "postinstall": "umi setup",
