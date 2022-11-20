@@ -1,0 +1,13 @@
+{
+  "short_name": "Pokemon Weakness",
+  "name": "Pokemon Weakness Explorer",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "192x192"
+    }
+  ],
+  "display": "standalone",
+  "description": "Yet another Pokemon Weakness Explorer."
+}
