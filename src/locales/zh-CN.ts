@@ -23,9 +23,13 @@ export default {
   "damage.zero": "无效",
   "damage.fourTimes": "4倍",
   "damage.quarter": "0.25倍",
+  "damage.times": "{times}倍",
   "multiplier.from": "受到伤害时的倍率",
   "multiplier.to": "造成伤害时的倍率",
   "msg.error": "请求失败，请稍后重试",
   "table.multiplier": "倍率",
   "table.types": "属性",
+  "action.plus": "复选",
+  "action.cancel": "取消",
+  "action.reset": "重置",
 };

@@ -19,42 +19,74 @@ export const colors: Record<PokemonType, string> = {
   fairy: "#D685AD",
 };
 
-export function convertTableData(
-  data?: TypeData,
-  direction?: "from" | "to"
-): TableData[] {
-  if (!data) return [];
-  if (direction === "from") {
-    return [
+export function convertTableData(data: TypeData): {
+  from: TableData[];
+  to: TableData[];
+} {
+  return {
+    from: [
       {
-        multiplier: "double",
+        multiplier: 2,
         types: data.doubleFrom,
       },
       {
-        multiplier: "half",
+        multiplier: 0.5,
         types: data.halfFrom,
       },
       {
-        multiplier: "zero",
+        multiplier: 0,
         types: data.zeroFrom,
       },
-    ];
-  }
-  if (direction === "to") {
-    return [
+    ],
+    to: [
       {
-        multiplier: "double",
+        multiplier: 2,
         types: data.doubleTo,
       },
       {
-        multiplier: "half",
+        multiplier: 0.5,
         types: data.halfTo,
       },
       {
-        multiplier: "zero",
+        multiplier: 0,
         types: data.zeroTo,
       },
-    ];
-  }
-  return [];
+    ],
+  };
+}
+
+function createInitialCalc(): Record<PokemonType, number> {
+  const initial = {} as Record<PokemonType, number>;
+  Object.keys(colors).forEach((e) => {
+    initial[e as PokemonType] = 1;
+  });
+  return initial;
+}
+
+export function calculateMultipliers(datas: TableData[][]): TableData[] {
+  const initial = createInitialCalc();
+  datas.forEach((data) => {
+    data.forEach(({ multiplier, types }) => {
+      types.forEach((type) => {
+        initial[type] *= multiplier;
+      });
+    });
+  });
+
+  const result = [] as TableData[];
+  Object.keys(initial).forEach((e) => {
+    const multiplier = initial[e as PokemonType];
+    if (multiplier !== 1) {
+      const exist = result.find((e) => e.multiplier === multiplier);
+      if (exist) {
+        exist.types.push(e as PokemonType);
+      } else {
+        result.push({
+          multiplier,
+          types: [e as PokemonType],
+        });
+      }
+    }
+  });
+  return result;
 }

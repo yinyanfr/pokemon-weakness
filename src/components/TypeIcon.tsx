@@ -64,8 +64,8 @@ const TypeIcon: FC<TypeIconProps> = ({ name, width = 16, height = 16 }) => {
           className={styles["svg-img"]}
           src={icons[name]}
           alt={name}
-          width={Math.floor(width * 0.9)}
-          height={Math.floor(height * 0.9)}
+          width={Math.floor(width * 0.8)}
+          height={Math.floor(height * 0.8)}
         />
       </div>
     </div>

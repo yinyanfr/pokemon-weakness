@@ -28,6 +28,6 @@ interface TypeData {
 }
 
 interface TableData {
-  multiplier: "double" | "half" | "zero";
+  multiplier: number;
   types: PokemonType[];
 }
