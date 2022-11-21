@@ -88,5 +88,7 @@ export function calculateMultipliers(datas: TableData[][]): TableData[] {
       }
     }
   });
+
+  result.sort((a, b) => b.multiplier - a.multiplier);
   return result;
 }
