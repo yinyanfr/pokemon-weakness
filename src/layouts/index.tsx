@@ -1,5 +1,6 @@
+import { SetLang } from "@/components";
 import { GithubOutlined } from "@ant-design/icons";
-import { Outlet, SelectLang, useIntl } from "umi";
+import { Outlet, useIntl } from "umi";
 import styles from "./index.less";
 
 export default function Layout() {
@@ -24,7 +25,7 @@ export default function Layout() {
         </ul>
         <ul>
           <li>
-            <SelectLang className={styles.lang} />
+            <SetLang />
           </li>
         </ul>
       </nav>
