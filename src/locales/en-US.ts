@@ -17,7 +17,7 @@ export default {
   "type.dark": "Dark",
   "type.steel": "Steel",
   "type.fairy": "Fairy",
-  "layout.title": "Pokemon Weakness",
+  "layout.title": "Pokémon Weakness",
   "damage.times": "{times}x",
   "multiplier.from": "Multipliers when receiving damages",
   "multiplier.to": "Multipliers when dealing damages",

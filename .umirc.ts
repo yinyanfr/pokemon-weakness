@@ -9,7 +9,7 @@ export default {
     title: false,
     useLocalStorage: true,
   },
-  title: "Pokemon Weakness",
+  title: "Pokémon Weakness",
   favicons: ["favicon.ico"],
   metas: [
     { name: "mobile-web-app-capable", content: "yes" },
@@ -18,7 +18,7 @@ export default {
       name: "apple-mobile-web-app-status-bar-style",
       content: "black-translucent",
     },
-    { name: "apple-mobile-web-app-title", content: "Pokemon Weakness" },
+    { name: "apple-mobile-web-app-title", content: "Pokémon Weakness" },
     { name: "apple-mobile-web-app-orientations", content: "portrait-any" },
     { name: "theme-color", content: "#ffffff" },
     { name: "msapplication-TileColor", content: "#ffffff" },

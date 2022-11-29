@@ -17,7 +17,7 @@ export default {
   "type.dark": "Ténèbre",
   "type.steel": "Acier",
   "type.fairy": "Fée",
-  "layout.title": "La Faiblesse des Pokemon",
+  "layout.title": "La Faiblesse des Pokémon",
   "damage.times": "{times}x",
   "multiplier.from": "Efficacité défensive",
   "multiplier.to": "Efficacité offensive",

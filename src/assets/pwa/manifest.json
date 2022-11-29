@@ -5,9 +5,9 @@
     "orientation": "portrait",
     "scope": "/",
     "start_url": "/",
-    "name": "Pokemon Weakness Explorer",
+    "name": "Pokémon Weakness Explorer",
     "short_name": "Weakness",
-    "description": "Yet another Pokemon Weakness Explorer.",
+    "description": "Yet another Pokémon Weakness Explorer.",
     "icons": [
         {
             "src": "/icon-192x192.png",

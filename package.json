@@ -16,7 +16,7 @@
     "antd": "^5.0.2",
     "firebase": "^9.14.0",
     "react-darkreader": "^1.5.6",
-    "umi": "^4.0.18"
+    "umi": "^4.0.32"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
