@@ -15,6 +15,7 @@
     "ahooks": "^3.7.2",
     "antd": "^5.0.2",
     "firebase": "^9.14.0",
+    "react-darkreader": "^1.5.6",
     "umi": "^4.0.18"
   },
   "devDependencies": {

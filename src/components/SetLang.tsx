@@ -13,6 +13,7 @@ const langs: Record<string, string> = {
 const SetLang: FC = () => {
   return (
     <Dropdown
+      trigger={["hover", "click"]}
       menu={{
         items: Object.keys(langs).map((e) => ({
           key: e,
