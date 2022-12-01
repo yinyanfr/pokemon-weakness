@@ -17,7 +17,7 @@ export default {
   "type.dark": "あく",
   "type.steel": "はがね",
   "type.fairy": "フェアリー",
-  "layout.title": "ポケモン弱点早見表",
+  "layout.title": "ポケモン相性早見表",
   "damage.times": "x{times}",
   "multiplier.from": "防御する時の相性",
   "multiplier.to": "攻撃する時の相性",

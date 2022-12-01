@@ -1,4 +1,7 @@
 {
+  "name": "pokemon-weakness",
+  "description": "Yet another pokemon weakness explorer",
+  "version": "1.0.0",
   "private": false,
   "author": "Yan <i@yinyan.fr>",
   "scripts": {
