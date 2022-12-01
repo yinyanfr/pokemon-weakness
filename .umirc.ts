@@ -15,10 +15,16 @@ export default {
     { name: "mobile-web-app-capable", content: "yes" },
     { name: "apple-mobile-web-app-capable", content: "yes" },
     {
+      name: "apple-touch-fullscreen",
+      content: "yes",
+    },
+    {
       name: "apple-mobile-web-app-status-bar-style",
       content: "black-translucent",
     },
     { name: "apple-mobile-web-app-title", content: "Pokémon Weakness" },
+    { name: "application-name", content: "Capteur Robeau Collector" },
+    { name: "apple-mobile-web-app-status-bar-style", content: "default" },
     { name: "apple-mobile-web-app-orientations", content: "portrait-any" },
     { name: "theme-color", content: "#ffffff" },
     { name: "msapplication-TileColor", content: "#ffffff" },
@@ -29,6 +35,10 @@ export default {
   links: [
     {
       rel: "manifest",
+      href: "/manifest.json",
+    },
+    {
+      rel: "prefetch",
       href: "/manifest.json",
     },
     {
@@ -58,6 +68,28 @@ export default {
       sizes: "196x196",
       href: "/icon-192x192.png",
     },
+    {
+      rel: "apple-touch-icon",
+      sizes: "192x192",
+      href: "/icon-192x192.png",
+    },
+    {
+      rel: "shortcut icon",
+      sizes: "512x512",
+      href: "/icon-512x512.png",
+    },
+    {
+      rel: "apple-touch-icon",
+      sizes: "512x512",
+      href: "/icon-512x512.png",
+    },
+  ],
+  scripts: [
+    `
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+    }
+    `,
   ],
   copy: [{ from: "src/assets/pwa", to: "dist" }],
 };
