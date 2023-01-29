@@ -1,25 +1,55 @@
 import { DamageCalc, TypeIcon, TypeName } from "@/components";
-import "@/global.less";
-import { colors } from "@/lib";
+import { colors, isFunction } from "@/lib";
 import { CloseOutlined, PlusOutlined } from "@ant-design/icons";
-import { FloatButton, Button, Divider, Space } from "antd";
-import { useId, useState } from "react";
-import { useIntl } from "umi";
+import { FloatButton, Button, Divider, Row, Col } from "antd";
+import { useId, useMemo, useState } from "react";
+import type { FC } from "react";
+import { useIntl, useSearchParams } from "umi";
 
-const Index = () => {
+const SIZES = {
+  xs: 8,
+  sm: 6,
+  md: 4,
+  lg: 3,
+  xl: 3,
+  xxl: 3,
+};
+
+const Index: FC = () => {
   const id = useId();
   const intl = useIntl();
-  const [selected, setSelected] = useState<PokemonType[]>([]);
   const [plus, setPlus] = useState(false);
 
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const selected = useMemo(() => {
+    const query = searchParams.get("q");
+    if (query?.length) {
+      return query.split(" ") as PokemonType[];
+    }
+    return [];
+  }, [searchParams]);
+  const setSelected = (
+    _selected: PokemonType[] | ((prev: PokemonType[]) => PokemonType[])
+  ) => {
+    if (isFunction(_selected)) {
+      setSearchParams({
+        q: (_selected as (prev: PokemonType[]) => PokemonType[])(selected).join(
+          " "
+        ),
+      });
+    } else {
+      setSearchParams({ q: (_selected as PokemonType[]).join(" ") });
+    }
+  };
+
   return (
-    <main>
+    <>
       <FloatButton.BackTop />
-      <Space direction="vertical">
-        <Space wrap>
-          {Object.keys(colors).map((e) => (
+      <Row wrap gutter={24} align="middle">
+        {Object.keys(colors).map((e) => (
+          <Col key={`${id}-${e}`} className="margin-bottom-10" {...SIZES}>
             <Button
-              key={`${id}-${e}`}
               icon={<TypeIcon name={e as PokemonType} />}
               type={selected?.includes(e as PokemonType) ? "default" : "ghost"}
               onClick={() => {
@@ -37,7 +67,12 @@ const Index = () => {
             >
               <TypeName name={e as PokemonType} />
             </Button>
-          ))}
+          </Col>
+        ))}
+      </Row>
+
+      <Row wrap gutter={24} align="middle" justify="center">
+        <Col {...SIZES}>
           <Button
             type={plus ? "default" : "link"}
             icon={<PlusOutlined />}
@@ -47,6 +82,8 @@ const Index = () => {
           >
             {intl.formatMessage({ id: `action.${plus ? "cancel" : "plus"}` })}
           </Button>
+        </Col>
+        <Col {...SIZES}>
           <Button
             danger
             type="link"
@@ -57,17 +94,17 @@ const Index = () => {
           >
             {intl.formatMessage({ id: "action.reset" })}
           </Button>
-        </Space>
+        </Col>
+      </Row>
 
-        <Divider />
+      <Divider />
 
-        <section>
-          {selected && (
-            <DamageCalc names={selected} setSelected={setSelected} />
-          )}
-        </section>
-      </Space>
-    </main>
+      <section>
+        {selected?.length ? (
+          <DamageCalc names={selected} setSelected={setSelected} />
+        ) : null}
+      </section>
+    </>
   );
 };
 

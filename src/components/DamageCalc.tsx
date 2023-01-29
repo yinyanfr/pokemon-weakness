@@ -14,7 +14,7 @@ import shield from "@/assets/icons/checked-shield.svg";
 
 interface DamageCalcProps {
   names: PokemonType[];
-  setSelected?: Dispatch<SetStateAction<PokemonType[]>>;
+  setSelected?: (selected: PokemonType[]) => void;
 }
 
 const DamageCalc: FC<DamageCalcProps> = ({ names = [], setSelected }) => {

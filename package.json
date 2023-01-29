@@ -1,7 +1,7 @@
 {
   "name": "pokemon-weakness",
   "description": "Yet another pokemon weakness explorer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": false,
   "author": "Yan <i@yinyan.fr>",
   "scripts": {
@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.8.0",
-    "@umijs/plugins": "^4.0.32",
+    "@umijs/plugins": "^4.0.47",
     "ahooks": "^3.7.2",
-    "antd": "^5.0.2",
+    "antd": "^5.1.6",
     "firebase": "^9.14.0",
     "react-darkreader": "^1.5.6",
     "umi": "^4.0.32"

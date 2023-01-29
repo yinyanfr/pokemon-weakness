@@ -17,3 +17,9 @@ Yet another Pokémon Weakness Explorer
 ![image-20221201193852244](./assets/image-20221201193852244.png)
 
 ![image-20221201194415764](./assets/image-20221201194415764.png)
+
+### :information_source: Credits
+
+[PokeAPI](https://pokeapi.co/)
+[Pokemon Type SVG Icons](https://github.com/duiker101/pokemon-type-svg-icons)
+[Service Worker Example](https://googlechrome.github.io/samples/service-worker/basic/)

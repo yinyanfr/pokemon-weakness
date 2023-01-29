@@ -92,3 +92,9 @@ export function calculateMultipliers(datas: TableData[][]): TableData[] {
   result.sort((a, b) => b.multiplier - a.multiplier);
   return result;
 }
+
+export function isFunction(functionToCheck: unknown) {
+  return (
+    functionToCheck && {}.toString.call(functionToCheck) === "[object Function]"
+  );
+}
